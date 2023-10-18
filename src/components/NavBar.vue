@@ -38,7 +38,7 @@ const {isAuthenticated, logout, user} = useAuth()
 
 <style scoped lang="postcss">
      nav {
-        @apply bg-slate-900 text-slate-200 h-20 flex;
+        @apply bg-black text-slate-200 h-20 flex;
         .wrapper {
             @apply container mx-auto w-full flex justify-between items-center;
 

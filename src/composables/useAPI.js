@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 import axios from 'axios'
 
-const employees = ref([])
+const demons = ref([])
 const pages = ref(1)
 const loading = ref(false)
 const activePage = ref(1)
@@ -15,26 +15,23 @@ const api = axios.create({
   },
 })
 
-const getEmployees = async () => {
+const getDemons = async () => {
   loading.value = true
-  const { data, headers } = await api.get('/api/employees', {
+  const { data, headers } = await api.get('/api/demons', {
     params: {
       page: activePage.value,
       size: pageSize.value,
     },
   })
-  employees.value = data
+  demons.value = data
   pages.value = Number(headers['x-total-pages']) || 1
   loading.value = false
 }
 
-const getDepartment = async (departmentId) => {
-  const { data } = await api.get(`/api/departments/${departmentId}`)
-  return data
-}
+
 
 const useAPI = () => {
-  return { employees, pages, activePage, loading, pageSize, getEmployees, getDepartment }
+  return { demons, pages, activePage, loading, pageSize, getDemons}
 }
 
 export default useAPI
