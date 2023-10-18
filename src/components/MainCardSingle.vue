@@ -28,6 +28,7 @@
 </script>
 
 <template>
+  <RouterLink v-if="props.demon.demonId" :to="`/api/demons/${props.demon.demonId}`">
   <div class="card" @click="selectCard">
     <div class="card-image">
       <img :src="props.demon.image" alt="" srcset="" />
@@ -37,6 +38,7 @@
 
     </div>
   </div>
+  </RouterLink>
 </template>
 
 <style scoped lang="postcss">

@@ -6,6 +6,7 @@ const pages = ref(1)
 const loading = ref(false)
 const activePage = ref(1)
 const pageSize = ref(8)
+const currentDemon = ref(null)
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
@@ -28,10 +29,14 @@ const getDemons = async () => {
   loading.value = false
 }
 
-
+const fetchDemon = async (id) => {
+    const { data } = await api.get(`/api/demons/${id}`)
+    currentDemon.value = data
+    console.log(data)
+  }
 
 const useAPI = () => {
-  return { demons, pages, activePage, loading, pageSize, getDemons}
+  return { demons, pages, activePage, loading, pageSize, getDemons, fetchDemon, currentDemon}
 }
 
 export default useAPI
