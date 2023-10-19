@@ -17,7 +17,7 @@
 <template>
   <p v-if="loading">Loading...</p>
   <div v-else class="wrapper">
-    <MainSearch />
+    <!--<MainSearch />-->
     <MainCards />
     <MainPagination />
   </div>
