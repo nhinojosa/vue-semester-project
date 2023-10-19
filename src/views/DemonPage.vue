@@ -29,7 +29,7 @@ onUnmounted(() => {
       v-if="currentDemon"
       class="flex flex-col items-center justify-center gap-6"
     >
-      <img class="p-8"
+      <img class="p-8 h-64 w-64"
         :src="currentDemon.image"
         :alt="currentDemon.name"
       />
