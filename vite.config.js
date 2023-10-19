@@ -7,7 +7,7 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/vue-company-directory-api/',
+  base: '/vue-semester-project/',
   plugins: [vue()],
   resolve: {
     alias: {
